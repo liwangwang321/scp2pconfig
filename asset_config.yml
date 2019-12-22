@@ -2,11 +2,11 @@ server:
   port: 4301
   context-path: /
 spring:
-  #  redis:
-  #    database: 0
-  #    host: 192.168.47.134
-  #    port: 6379
-  #    password: 123456
+   redis:
+     database: 0
+     host: 192.168.47.136
+     port: 6379
+     password: 123456
   datasource:
     #1.JDBC
     type: com.alibaba.druid.pool.DruidDataSource
