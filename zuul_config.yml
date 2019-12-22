@@ -8,24 +8,38 @@ spring:
 
 eureka:
   instance:
-    instance-id: microservice-zuul:3001 #\u5BA2\u6237\u7AEF\u5B9E\u4F8B\u540D\u79F0
-    prefer-ip-address: true #\u662F\u5426\u663E\u793AIP
+    instance-id: microservice-zuul:3001 #客户端实例名称
+    prefer-ip-address: true #是否显示IP
   client:
     service-url:
-      #\u8BBE\u7F6E\u4E0EEureka\u6CE8\u518C\u4E2D\u5FC3\u4EA4\u4E92\u7684\u5730\u5740\uFF0C\u662F\u6240\u6709\u6CE8\u518C\u4E2D\u5FC3
-      defaultZone: http://eureka2001.javawwl.com:2001/eureka/,http://eureka2002.javawwl.com:2002/eureka/,http://eureka2003.javawwl.com:2003/eureka/   #\u628A\u670D\u52A1\u6CE8\u518C\u5230eureka\u6CE8\u518C\u4E2D\u5FC3
+      #设置与Eureka注册中心交互的地址，是所有注册中心
+      defaultZone: http://localhost:2001/eureka/  #把服务注册到eureka注册中心
 
 zuul:
-  routes: # \u6240\u6709\u7684\u8DEF\u7531\u90FD\u8981\u914D\u7F6E\u5728\u8FD9\u91CC
-    studentServer.serviceId: microservice-student
-    studentServer.path: /studentServer/**
+  routes: # 所有的路由都要配置在这里
+    businessServer.serviceId: microservice-business
+    businessServer.path: /businessServer/**
+    sysServer.serviceId: microservice-sys
+    sysServer.path: /sysServer/**
+    assetServer.serviceId: microservice-asset
+    assetServer.path: /assetServer/**
+    membersServer.serviceId: microservice-members
+    membersServer.path: /membersServer/**
+    settingServer.serviceId: microservice-setting
+    settingServer.path: /settingServer/**
+  #需要忽略的头部信息，不在传播到其他服务
+  #  sensitive-headers: Access-Control-Allow-Origin
+  #  ignored-headers: Access-Control-Allow-Origin,H-APP-Id,Token,APPToken
   ignored-services: "*"
-  prefix: /javawwl
+  prefix: /scp2p
 
 
 info:
-  groupId: com.liwangwang.springcloud
+  groupId: com.scp2p
   artifactId: microservice-zuul-3001
   version: 1.0-SNAPSHOT
-  userName: http://www.javawwl.com
+  userName: "wangwang"
   phone: 123456
+
+
+
