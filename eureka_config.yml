@@ -1,4 +1,4 @@
-port: 66
+port: 55
 server:
   port: 2001
   context-path: /
