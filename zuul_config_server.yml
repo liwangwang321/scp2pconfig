@@ -23,7 +23,7 @@ zuul:
     sysServer.path: /sysServer/**
     assetServer.serviceId: microservice-asset
     assetServer.path: /assetServer/**
-    membersServer.serviceId: microservice-members
+    membersServer.serviceId: microservice-memberss
     membersServer.path: /membersServer/**
     settingServer.serviceId: microservice-setting
     settingServer.path: /settingServer/**
