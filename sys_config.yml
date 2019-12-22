@@ -1,5 +1,5 @@
 ---
-port: 66
+port: 88
 server:
   port: 4401
   context-path: /
