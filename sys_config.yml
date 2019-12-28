@@ -6,7 +6,7 @@ spring:
   profiles: sys4401
   redis:
     database: 0
-    host: 192.168.47.136
+    host: 192.168.47.137
     port: 6379
     password: 123456
   datasource:
@@ -106,7 +106,7 @@ spring:
   profiles: sys4402
   redis:
     database: 0
-    host: 192.168.47.136
+    host: 192.168.47.137
     port: 6379
     password: 123456
   datasource:
